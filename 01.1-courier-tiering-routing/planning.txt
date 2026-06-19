@@ -1,0 +1,18 @@
+### 📝 MILESTONE 1: PLANNING DOCUMENT
+
+1. PROBLEM DEFINITION: We want to ensure that the packages are directed to the correct courier service, based on a package's destination, 
+weight and Service Level Agreemet (SLA). It is vital that we have robust error handling in place to ensure that each package is routed correctly.
+
+2. EXPECTED INPUTS & DATA TYPES: (List the inputs and what Python data types they should be)
+- PAckage ID (String)
+- SLA (String)
+- Destination (String)
+- Weight (Float)
+
+3. LOGICAL REASONING: (Look at the routing rules. If a package weighs 6.2 kg and has an "Express" SLA, which courier should it route to? What if it weighs 2.1 kg and has an "Overnight" SLA?)
+if package = 6.2kg and has "Express" SLA, then it must go via Atlas Freight.
+if package = 2.1kg and has "Overnight" SLA, then it must go via NextDay Air.
+
+4. POTENTIAL RISKS/EDGE CASES: (What could a user input that might break our logic or cause an error?)
+The user may enter non-numerical values where the program expects a float for example. This would cause a ValueError. 
+The user could also put negative values for weight, or unrecognized SLAs. 
