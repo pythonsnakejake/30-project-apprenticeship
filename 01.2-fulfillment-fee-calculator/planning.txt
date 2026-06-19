@@ -1,0 +1,34 @@
+### 📝 MILESTONE 1: PLANNING DOCUMENT (PROJ 1.2)
+
+1. PROBLEM DEFINITION: (What specific financial risk are we mitigating for Sarah Jenkins?)
+
+We are trying to mitigate the risk of liquidity depletion and ultimately insolvency. 
+If a business consistently operates at a net loss, it burns through its cash reserves and
+working capital. This leaves it unable to pay operational expenses, service debt, or fund 
+future growth.
+
+2. MATHEMATICAL RUN-THROUGH: 
+   - Scenario A: A standard client (`priority_client=False`) orders exactly 3 items. What is their total fulfillment fee? (Show your manual breakdown step-by-step).
+   total_price = 0.0
+   1 <= order_size <= 5:
+       total_price += 5.00
+       if priority_client:
+           total_price *= 0.9
+        
+        total_price += 1.50 # Add surcharge
+
+    total_price = £6.50 # Not a priority client
+   - Scenario B: A priority client (`priority_client=True`) orders exactly 10 items. What is their total fulfillment fee? (Show your manual breakdown step-by-step).
+   total_price = 0.0
+   6 <= order_size <= 20:
+       total_price = order_size * 4.50
+       if priority_client:
+           total_price *= 0.9
+        
+        total_price += 1.50 # Add surcharge
+
+    total_price = £42.00 # Priority client
+3. POTENTIAL EDGE CASES: (What happens if `item_count` is passed as a float like `5.5` or an invalid integer like `0`?)
+Passing a float will cause an operational error, as we cannot ship half an item. 
+Passing a string to a function that is expecting a integer for example, would cause an error if we
+try to perform a mathematical operation on it. 
