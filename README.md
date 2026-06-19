@@ -1,7 +1,23 @@
 ## Stage 1: Python Foundations Through Useful Projects (Core Syntax & Logic)
 
 - **Project 1.1: Courier Tiering & Routing Engine.** Multi-conditional logic to automatically assign shipping carriers based on package weight, destination, and SLA tier.
+
+**STATUS**: Project 1.1 Complete. Moving to Project 1.2.
+**COMPANY**: OmniMart Logistics (3PL/Fulfillment)
+**SYSTEMS BUILT**: Courier Routing Engine v1.0
+**KPIs TRACKED**: SLA Alignment %, Core Cost-per-Order Routing
+**CURRENT readiness**: Python 12%, Analytics 5%, Portfolio 5%
+**OBJECTIVES**: Functional programming, pricing tiers, mathematical logic.
+
 - **Project 1.2: Dynamic Fulfillment Fee Calculator.** Custom functions to calculate variable warehouse picking/packing fees with volume-based tier discounts.
+
+**STATUS**: Project 1.2 Complete. Moving to Project 1.3.
+**COMPANY**: OmniMart Logistics (3PL/Fulfillment)
+**SYSTEMS BUILT**: Courier Routing Engine v1.0, Dynamic Billing Engine v1.0
+**KPIs TRACKED**: Revenue Integrity, Invoicing Error Margin, Variable Volume Margins
+**CURRENT READINESS**: Python 18%, Analytics 12%, Portfolio 10%
+**OBJECTIVES**: Transition into data collections, dictionary mappings, and loops.
+
 - **Project 1.3: Warehouse Inventory Audit Reconciliation.** Loop and dictionary manipulation to compare physical counts against systemic inventory tables, identifying variances.
 - **Project 1.4: Multi-Client Manifest Aggregator.** List and string processing to parse raw, poorly formatted shipping manifests from different external e-commerce clients.
 - **Project 1.5: SLA Breach Alert System.** Structural exception handling and modular functions to scan operational timestamps and flag high-priority delivery delays.
