@@ -1,5 +1,16 @@
 def route_package(package_id, weight, destination_zone, sla):
     formatted_sla = sla.lower()
+
+    recognized_sla = ["overnight", "express", "standard"]
+
+    if weight <= 0:
+        print("❌ ERROR: Weight must be greater than 0. Please try again.")
+        return
+
+    if formatted_sla not in recognized_sla:
+        print("❌ ERROR: SLA not recognised. Please try again.")
+        return
+    
     if formatted_sla == "overnight":
         courier = "NextDay Air"
     elif formatted_sla == "express":
