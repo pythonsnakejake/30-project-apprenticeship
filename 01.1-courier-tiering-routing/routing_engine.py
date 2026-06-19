@@ -1,5 +1,5 @@
 def route_package(package_id, weight, destination_zone, sla):
-    formatted_sla = sla.lower()
+    formatted_sla = sla.strip().lower()
 
     recognized_sla = ["overnight", "express", "standard"]
 
@@ -23,8 +23,6 @@ def route_package(package_id, weight, destination_zone, sla):
             courier = "Atlas Ground"
         else:
             courier = "RapidPost Eco"
-    else:
-        print("SLA or weight is incorrect. Please try again.")
 
     print(f"Package {package_id} routed via {courier}")
 
