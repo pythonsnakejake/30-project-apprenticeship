@@ -13,3 +13,10 @@ def calculated_fulfillment_fee(order_id, item_count, priority_client):
         intial_price = item_count * 4.50
     else:
         intial_price = item_count * 3.75
+
+    if priority_client:
+        intial_price *= 0.9
+
+    final_price = intial_price + 1.5
+
+    print(f"Total Price: £{final_price:.2f}")
