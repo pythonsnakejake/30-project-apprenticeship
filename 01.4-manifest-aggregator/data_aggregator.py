@@ -9,9 +9,23 @@ def parse_manifest(raw_manifests):
         else:
             print("Unrecognized manifest format.")
 
-        normalized_id = raw_id.strip().upper()
-        normalized_weight = float(raw_weight)
-        normalized_zone = raw_zone.strip().upper()
+        cleaned_batch.append({
+            "manifest_id": raw_id.strip().upper(),
+            "weight": float(raw_weight),
+            "zone": raw_zone.strip().upper()
+        })
         
+    return cleaned_batch
 
+# --- SYSTEM VERIFICATION STREAM ---
+raw_incoming_stream = [
+    "AA-9910//4.55//zone_east",
+    "  bb-2214 , 12.80 , zone_west  ",
+    "AA-5512//1.20//zone_north",
+    "bb-8841 ,   0.95 , zone_south  "
+]
+
+print("--- RUNNING MANIFEST INGESTION BATCH ---")
+processed_data = parse_manifest(raw_incoming_stream)
+print(processed_data)
         
