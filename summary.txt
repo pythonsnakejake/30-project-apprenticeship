@@ -1,0 +1,26 @@
+=== Project 1.1: Courier Tiering & Routing Engine. ===
+
+STATUS: Project 1.1 Complete. Moving to Project 1.2.
+COMPANY: OmniMart Logistics (3PL/Fulfillment)
+SYSTEMS BUILT: Courier Routing Engine v1.0
+KPIs TRACKED: SLA Alignment %, Core Cost-per-Order Routing
+CURRENT readiness: Python 12%, Analytics 5%, Portfolio 5%
+OBJECTIVES: Functional programming, pricing tiers, mathematical logic.
+
+=== Project 1.2: Dynamic Fulfillment Fee Calculator. ===
+
+STATUS: Project 1.2 Complete. Moving to Project 1.3.
+COMPANY: OmniMart Logistics (3PL/Fulfillment)
+SYSTEMS BUILT: Courier Routing Engine v1.0, Dynamic Billing Engine v1.0
+KPIs TRACKED: Revenue Integrity, Invoicing Error Margin, Variable Volume Margins
+CURRENT READINESS: Python 18%, Analytics 12%, Portfolio 10%
+OBJECTIVES: Transition into data collections, dictionary mappings, and loops.
+
+=== Project 1.3: Warehouse Inventory Audit Reconciliation. ===
+
+STATUS: Project 1.3 Complete. Moving to Project 1.4.
+COMPANY: OmniMart Logistics (3PL/Fulfillment)
+SYSTEMS BUILT: Courier Routing Engine, Dynamic Billing Engine, Inventory Audit Pipeline v1.0
+KPIs TRACKED: Inventory Shrinkage Valuation, Variance Frequencies, Terminal Alert Accuracy
+CURRENT READINESS: Python 25%, Analytics 18%, Portfolio 15%
+OBJECTIVES: Tackle multi-client data streams, nested text sanitization, structural mapping arrays.
