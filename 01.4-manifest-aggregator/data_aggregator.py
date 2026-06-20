@@ -7,7 +7,8 @@ def parse_manifest(raw_manifests):
         elif "," in raw_line:
             raw_id, raw_weight, raw_zone = raw_line.split(",")
         else:
-            print("Unrecognized manifest format.")
+            print("❌ ERROR: Unrecognized manifest format.")
+            continue
 
         cleaned_batch.append({
             "manifest_id": raw_id.strip().upper(),
