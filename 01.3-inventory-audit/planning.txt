@@ -1,0 +1,24 @@
+### 📝 MILESTONE 1: PLANNING DOCUMENT (PROJ 1.3)
+
+1. PROBLEM DEFINITION: (What exact operational vulnerability are we diagnosing for Marcus Brody?)
+
+We are trying to ensure that stock levels are correct, and identifying where
+there are inconsistencies such as missing or excess stock. 
+
+2. DATA STRUCTURE DESIGN: (We need to map an item's ID, its cost, its system stock, and its physical count. 
+If we use a Python list of dictionaries, write out an example of how a single product's record should look 
+inside code syntax.)
+
+item = {
+    "item_id": "SKU-1024",
+    "item_cost": 59.99,
+    "system_stock": 50,
+    "physical_count": 40
+}
+
+3. LOGICAL REASONING: (If an item has a system stock of 50, a physical count of 40, and costs £60.00 per unit, 
+what is the variance? Does this count as Shrinkage or an Overage? What is the total financial value of this 
+discrepancy, and does it trigger a High-Value Alert?)
+
+variance = 40 - 50 = -10, so there is shrinkage.
+total value = -10 * 60 = -£600, which should trigger a High-Value Alert
