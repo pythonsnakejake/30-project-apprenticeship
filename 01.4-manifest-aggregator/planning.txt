@@ -1,0 +1,27 @@
+### 📝 MILESTONE 1: PLANNING DOCUMENT (PROJ 1.4)
+
+1. PROBLEM DEFINITION: (What data ingestion bottleneck are we solving for our onboarding operations?)
+We are trying to significantly reduce the time it takes to process invoices sent to us, in different formats, 
+by two companies. By automating the process, we no longer need to process each invoice invidually to find anomalies, 
+which not only speeds things up, but ensures that little to no mistakes are made by human error on our side either.
+
+2. STRING METHOD ANALYSIS: 
+   - Given the raw string `"  ord773 ,  5.25 , zone_c  "`, map out the sequence of string methods you will call to isolate the ID, weight, 
+and zone into completely clean, standardized uppercase variables.
+
+First we need to split the string (.split()) by it's separator, then strip the whitespace (.strip()), normalize the text by 
+transforming it to lowercase (.lower()), then replace the separator (.replace())
+
+** CORRECTIONS **
+The .split() Behavior: When you run ",".split() on "  ord773 ,  5.25 , zone_c  ", it splits the string exactly at the commas. It leaves you with a list of three separate strings: ["  ord773 ", "  5.25 ", " zone_c  "].
+
+The Bottleneck: Once a string is split into a list, you can no longer call string methods like .strip() or .upper() on the list object directly—you have to apply them to each individual element inside the list!
+
+The Target Order: Instead of trying to use .replace(), your process should look like this:
+
+Identify & Split: Split by the delimiter (// or ,).
+
+Clean Elements: Loop through the split elements, using .strip() to clear whitespaces and .upper() to normalize the text casing.
+
+3. LOGICAL REASONING: (How can your script programmatically determine if an incoming string should be split by `//` versus split by `,`? What conditional check will you write?)
+we can check if "//" or "," in the string, and write the conditional logic accordingly.
