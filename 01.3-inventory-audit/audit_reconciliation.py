@@ -6,5 +6,20 @@ def reconcile_inventory(batch_list):
     for batch in batch_list:
         current_id = batch["item_id"]
         variance = batch["physical_count"] - batch["system_stock"]
+        batch_cost = batch["cost"]
 
-        print(f"Item ID: {current_id} Variance: {variance}")
+        if variance == 0:
+            status = "BALANCED"
+        elif variance < 0:
+            status = "SHRINKAGE"
+        else:
+            status = "OVERAGE"
+
+        financial_impact = abs(variance * batch_cost)
+
+        if status == "SHRINKAGE" and financial_impact > 500.00:
+            print("🚨 ALERT: High-Value Loss! Investigation Required!")
+
+        print(f"\nITEM ID: {current_id} | STATUS: {status} | VARIANCE: {variance} | FINANCIAL IMPACT: £{financial_impact:.2f}")
+
+reconcile_inventory(inventory_batch)
