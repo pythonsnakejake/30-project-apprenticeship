@@ -1,0 +1,33 @@
+### 📝 MILESTONE 1: PLANNING DOCUMENT (PROJ 2.1)
+
+1. PROBLEM DEFINITION: (What operational bottleneck and risk are we eliminating by engineering a custom native file parser for Marcus Brody?)
+We are trying to significantly reduce the time it takes to process shipping documents, and prevent delaying trucks leaving our warehouse yard.
+By automating this process, we not only reduce the time it takes, but also the risk of human error, which may have unexpected consequences for 
+ourselves, our carriers, and our customers. 
+
+2. DISK TO MEMORY LOGIC: 
+   - Why is using Python's `with open("file.csv", "r") as file:` framework (Context Manager) considered far safer and superior to simply using 
+   `file = open("file.csv")`? What critical risk does it eliminate?
+
+   with open() closes the file after we have finished using it, whereas file =  open() does not, we have to close it ourselves. If we forget to close 
+   the file, we risk writing data to it that we did not intend to, or accidently deleting data. 
+
+   - When reading a text file line-by-line, the last column's string data usually contains a hidden `\n` character. What does `\n` represent, 
+   and what string method must we call to remove it?
+
+   `\n` is used to add a new blank line, separating each line of our data. To remove this, we can using the .strip() method.
+
+3. THE HEADER EXCLUSION PROBLEM: (When looping through a file data stream, the first line will literally be the text 
+`"Tracking_ID,Carrier,Weight_KG"`. If your loop tries to convert the string `"Weight_KG"` into a `float()`, the script will crash. 
+Describe a logical strategy you can use to skip or pop that first header line before starting your accumulator loop.)
+
+We can stream our file line-by-line using a file iterator loop. To skip the header line cleanly without loading the whole file into memory, 
+we can use Python's native next() function before the loop starts.
+
+```
+with open("shipping_manifest.csv", "r") as file:
+    header = next(file)  # Streams and consumes exactly ONE line (the header), advancing the cursor!
+    for line in file:    # Automatically starts streaming from row 2 onwards!
+```
+
+This streaming strategy keeps our memory footprint at zero, whether the file has 3 rows or 30,000,000 rows.
