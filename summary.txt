@@ -1,3 +1,5 @@
+===== MODULE 1 =====
+
 === Project 1.1: Courier Tiering & Routing Engine. ===
 
 STATUS: Project 1.1 Complete. Moving to Project 1.2.
@@ -32,3 +34,11 @@ SYSTEMS BUILT: Courier Routing Engine, Dynamic Billing Engine, Inventory Auditor
 KPIs TRACKED: Data Ingestion Latency, Manifest Token Integrity, Stream Failure Frequency
 CURRENT READINESS: Python 32%, Analytics 24%, Portfolio 20%
 OBJECTIVES: Transition into structured Exception Handling, error interception, and operational alerts.
+
+=== Project 1.5: SLA Breach Alert System ===
+STATUS: Project 1.5 Complete. Moving to Module 2.
+COMPANY: OmniMart Logistics (3PL/Fulfillment)
+SYSTEMS BUILT: Courier Router, Dynamic Billing Engine, Inventory Auditor, Manifest Aggregator, SLA Monitor v1.0
+KPIs TRACKED: SLA Penalty Avoidance, Data Stream Processing Uptime, Exception Trap Granularity
+CURRENT READINESS: Python 40%, Analytics 30%, Portfolio 25%
+OBJECTIVES: Transition into Module 2: File Ingestion, Raw CSV Processing, and Multi-Source Merging.
