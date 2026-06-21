@@ -1,0 +1,24 @@
+### 📝 MILESTONE 1: PLANNING DOCUMENT (PROJ 1.5)
+
+1. PROBLEM DEFINITION: (What financial and technical risks are we mitigating for Marcus Brody's operational logs?)
+We are trying to mitigate the financial impact of delayed shipping and the financial penalties incurred as a result. 
+The program we write will also handle errors in our data, such as incorrect data types and missing values, and respond to 
+these errors gracefully so that our program doesn't just crash, providing a much better user experience.
+
+2. RUNTIME ERROR SCANNING: 
+   - Look at the calculation: `duration = shipped_hour - received_hour`. 
+   - If `shipped_hour = "14"` (a string) and `received_hour = 8` (an integer), what specific exception type will Python throw at runtime?
+
+    Python would throw a TypeError because we cannot subtract an integer (or any numerical type, float etc.) from a string. 
+
+   - If `shipped_hour = 6` and `received_hour = 10`, what is the calculated duration? Why is this value operationally impossible?
+
+    The resulting duration would give a negative value, which in the context of time, would be -4 hours, which is impossible without timetravel.
+
+3. EXCEPTION HANDLING LOGIC: (Explain in your own words why catching generic exceptions using a blanket `except:` statement is considered a dangerous, 
+low-quality software engineering habit compared to catching specific exceptions like `except TypeError:`.)
+
+Sometimes we may get errors that we can't, or shouldn't recover from, and allowing a program which requires user input could have potentially dangerous
+consequences. It would also make debugging our program harder as we would not know the specific error that is causing our code to fail. 
+A blanket except: block will also capture keyboard interrupts (Ctrl+C) or system termination signals. That means if a developer tries to manually stop a stuck program, 
+a blanket except: block will intercept that signal and refuse to let the program shut down!
