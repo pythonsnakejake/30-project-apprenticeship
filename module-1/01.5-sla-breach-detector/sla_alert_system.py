@@ -3,7 +3,7 @@ def monitor_sla_performance(operational_batch):
     for record in operational_batch:
         try:
             duration = record["shipped_hour"] - record["received_hour"]
-
+ 
             if duration < 0:
                 raise ValueError("Shipped hour cannot be before received hour.")
             
