@@ -18,6 +18,6 @@ with open(file_name, "r") as file:
 print(f"""
 ========================================
 Total Rows Processed: {record_count}
-Total Manifest Weight: {total_weight}kg
+Total Manifest Weight: {total_weight:.2f}kg
 ========================================
 """)
