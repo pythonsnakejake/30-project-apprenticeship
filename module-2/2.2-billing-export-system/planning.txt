@@ -1,0 +1,19 @@
+### 📝 MILESTONE 1: PLANNING DOCUMENT (PROJ 2.2)
+
+1. PROBLEM DEFINITION: (What financial logging risk and operational bottleneck are we resolving by turning console read-outs into physical text files?)
+Not only are we speeding up the process of generating transaction ledgers, we are also protecting this data and the company itself in numerous ways. 
+By making that all our calculations are correct, we minimize the risk of making mistakes when summarizing fulfillment fees, order counts and tax rates. 
+This protects the company financially, as incorrectly calculating fees and taxes can severely damage a company’s finances, legal standing, and reputation.
+By saving the ledgers to permant storage, we minimize the risk of data loss for human and system errors. 
+
+2. CAPTURING MODES (READ vs. WRITE):
+   - In Python, opening a file with mode `"r"` stands for Read. What do the modes `"w"` (Write) and `"a"` (Append) stand for?
+   Write mode creates a new file and writes the data, whereas adding adds new data to the end of an existing document.
+
+   - What happens to the pre-existing text inside a file named `invoice.txt` if you accidently open it using the `"w"` mode versus the `"a"` mode?
+   This would overwrite the existing data.
+
+3. SERIALIZATION LINES: (Why does calling `file.write("LINE ONE")` followed immediately by `file.write("LINE TWO")` result in a broken text format 
+inside the physical text file? What hidden character string must you explicitly add to the end of your text sentences to keep them separated?)
+Calling file.write() twice back-to-back results in a broken layout because the method does not automatically add a newline character at the end of your string. 
+We must add a new line character "\n" to ensure that each line of data is actually written on a new line instead of it being one continues string of text.
