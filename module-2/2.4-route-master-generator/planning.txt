@@ -1,0 +1,24 @@
+### 📝 MILESTONE 1: PLANNING DOCUMENT (PROJ 2.4)
+
+1. PROBLEM DEFINITION: (What hardware risk and manual spreadsheet formatting issue are we eliminating for Marcus Brody?)
+   We are formatting records into raw comma-delimited string and outputting a valid tabular data asset, which is machine readable,
+   and will prevent the harware controller from rejecting the initalization batch, which causes it to shut down the conveyor lines.
+
+2. TABULAR CONSTRAINTS:
+   - In a standard `.csv` file, what character separates horizontal cell blocks (columns), and what hidden character string represents a vertical drop to a new horizontal row?
+
+   In a standard .cvs file, commas separate the horizontal cell blocks, and the new line character `\n` represents a vertical
+   drop to a new horizontal row.
+   - If a dictionary record contains `{"hub": "London", "carrier": "DHL"}` and your script joins them directly as `London,DHL` without adding a row break token at the end, what will happen when you try to write the _next_ tracking record into the text stream?
+
+   It will continue to write the data on the same line as the previous one, resulting in a string that looks like this
+   `London,DHL,Paris,APC`
+
+3. BUFFER PERFORMANCE DESIGN: (Explain why writing out file header structures completely _outside_ your processing data loops is a critically important sequence pattern compared to checking for headers inside your row loop with conditional markers.)
+
+The headers will be rewritten everytime the loop runs, and we would end up with headers on multiple rows instead of one row at the
+very top of our .cvs file. It would duplicate the headers unless a developer used a conditional check like
+
+if is_first_row:.
+
+However, using a conditional check means the processor has to ask that question millions of times for a large dataset, which wastes massive amounts of CPU cycles. Writing the header completely outside the loop eliminates that check entirely.
