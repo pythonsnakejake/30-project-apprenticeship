@@ -4,8 +4,10 @@ def generate_route_master(route_data):
         file.write("Hub,Carrier,Zone\n")
 
         for route in route_data:        
-            row_string = f"{route['hub']},{route['carrier']},{route['zone']}\n"
-        
+            row_fields = [route['hub'], route['carrier'], route['zone']]
+            
+            row_string = ",".join(row_fields) + "\n"
+            
             file.write(row_string)
             
 # --- PRIMARY HARDWARE CONVEYOR MAP MATRIX ---
