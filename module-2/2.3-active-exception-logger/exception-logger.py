@@ -10,7 +10,6 @@ def log_transit_exceptions(shipment_batch):
         with open("./freight_exceptions.txt", "a") as file:
             file.writelines(staged_lines)
                 
-                
 # --- ACTIVE TRANSIT STREAMS (RUN 1: MORNING BATCH) ---
 morning_stream = [
     {"tracking_id": "TRK-A1", "carrier": "DHL", "status": "In Transit"},
