@@ -1,0 +1,24 @@
+### 📝 MILESTONE 1: PLANNING DOCUMENT (PROJ 2.3)
+
+1. PROBLEM DEFINITION: (What data protection vulnerability and operational liability are we solving for Sarah Jenkins?)
+
+We are resolving a severe data vulnerability: accidental log truncation. If historical exception data is wiped out, OmniMart loses its audit trail 
+for liability claims, leaving the company completely exposed during customer disputes or compliance reviews.
+
+2. THE APPENDFILE POINTER MECHANISM:
+   - When you open a file using `with open("log.txt", "w")`, where does Python place the cursor pointer relative to existing text inside that file?
+
+   mode="w": Python places the cursor pointer at the very beginning of the file (index 0) and immediately truncates (erases) everything inside the 
+   file before writing new data.
+
+   - When you open a file using `with open("log.txt", "a")`, where does Python place the cursor pointer? Why does this prevent data loss?
+
+   mode="a": Python places the cursor pointer at the very end of the file, right after the last existing character. 
+   Because the pointer starts at the end, any new data is attached directly onto the bottom of the document without touching historical data rows.
+
+3. DATA CORRUPTION PROTECTION: (If your script runs a loop that writes multiple lines in append mode, what happens if you forget to add `\n` 
+
+to the end of the strings? Describe how the layout will appear inside the text file.)
+If you forget to include \n at the end of your strings in append mode, the file system will smash the data together horizontally. 
+The first entry of a new batch will append itself directly onto the end of the last historical line, resulting in one continuous, 
+unreadable run-on sentence.
