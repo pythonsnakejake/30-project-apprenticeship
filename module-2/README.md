@@ -35,11 +35,16 @@ Rather than relying on resource-heavy external libraries, this architecture util
 - **Objective:** Acts as a complete data clearinghouse that ingests unstable legacy inputs, purges data corruption, tracks processing telemetry, and routes outputs to multiple separate files.
 - **Mechanism:** Integrates nested `with open()` handles to run three concurrent multi-mode data streams. Wraps validation filters in target-specific `ValueError` exception boundaries, using loop-skipping protocols (`continue`) to guarantee continuous processing runtime.
 
+### 6. Automated PDF/Text Invoice Generator (`samuels_invoice.pdf`)
+
+- **Objective:** Compiles calculated operational metrics into clean, reproducible, and publication-quality billing summaries for the finance team[cite: 2].
+- **Mechanism:** Insulates data processing primitives from structural string vectors. Employs a cross-platform CSS table-grid architecture (`display: table`, `display: table-cell`) within an intermediate HTML template before compiling to a production-ready binary vector PDF via WeasyPrint[cite: 2].
+
 ---
 
 ## 💻 Technical Blueprint Specifications
 
 - **Core Runtime Environment:** Python 3.11+
-- **System Library Dependencies:** None (100% Native Standard Library Modules)
+- **System Library Dependencies:** Python Standard Library Modules (plus WeasyPrint for binary PDF compilation)[cite: 2]
 - **Error Handling Topography:** Dynamic Structural Try/Except Traps (`ValueError`)
-- **Operational Performance Target:** $O(1)$ Persistent RAM Allocation Scaling Profile
+- **Operational Performance Target:** $O(1)$ Persistent RAM Allocation Scaling Profile for file-system stream transformations
