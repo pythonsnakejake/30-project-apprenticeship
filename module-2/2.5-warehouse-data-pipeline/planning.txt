@@ -1,0 +1,19 @@
+### 📝 MILESTONE 1: PLANNING DOCUMENT (PROJ 2.5)
+
+1. PROBLEM DEFINITION: (What macro-level operational risk and data fragmentation vulnerabilities are we eliminating by engineering this unified, 
+fault-tolerant ingestion pipeline?)
+We are isolating corrupt or missing data from the data we have cleaned, and preventing it from entering our main inventory system. By doing so, we 
+prevent the database from crashing. 
+
+2. MULTI-FILE ARCHITECTURE:
+   - When handling two separate output targets (writing a new clean CSV file from scratch versus appending to a historical error text log), 
+   what specific file mode letters (`"r"`, `"w"`, `"a"`) must be assigned to each target file?
+   When writing a new clean CSV file, we will use the "w", and we will be using "a" to append data to or historical error text log.
+
+   - Explain why we must use append mode for our error log instead of write mode.
+   We want to ensure that we don't overwrite existing data. 
+
+3. ETL CONTROL FLOW PATHS: (Describe exactly what happens to a row containing a text typo like `"twelve"` instead of a number when it hits your parsing 
+loop. Which block catches it, which file does it get routed to, and what keyword ensures the loop skips to the next row without stopping the script?)
+The text typo will be caught in our Except ValueError block, and will be routed to the ingestion_errors.txt file. The keyword we use to ensure the loop 
+skips to the next line the is 'continue' keyword.
