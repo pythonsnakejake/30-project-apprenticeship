@@ -1,0 +1,64 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            @page { size: A4; margin: 20mm 15mm; }
+            body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #2d3748; line-height: 1.6; }
+            h1 { color: #1a365d; border-bottom: 2px solid #2b6cb0; padding-bottom: 10px; text-transform: uppercase; }
+            .meta-table { display: table; width: 100%; margin-top: 20px; border-collapse: collapse; }
+            .meta-row { display: table-row; }
+            .meta-cell { display: table-cell; width: 50%; padding: 8px 0; vertical-align: top; }
+            .data-table { width: 100%; margin-top: 30px; border-collapse: collapse; }
+            .data-table th { background-color: #2b6cb0; color: white; padding: 10px; text-align: left; }
+            .data-table td { padding: 10px; border-bottom: 1px solid #e2e8f0; }
+            .text-right { text-align: right; }
+        </style>
+    </head>
+    <body>
+        <h1>OmniMart Logistics Invoices</h1>
+        
+        <div class="meta-table">
+            <div class="meta-row">
+                <div class="meta-cell">
+                    <strong>Billed To:</strong><br>
+                    Samuels Inc<br>
+                    Fulfillment Partner Account
+                </div>
+                <div class="meta-cell text-right">
+                    <strong>Invoice Status:</strong> UNPAID<br>
+                    <strong>Generated Date:</strong> 2026-06-24
+                </div>
+            </div>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Operational Metric Field</th>
+                    <th class="text-right">Volume / Absolute Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Base Order Fulfillment Ingestion Tier</td>
+                    <td class="text-right">150 Orders</td>
+                </tr>
+                <tr>
+                    <td>Subtotal Line Item Assessment</td>
+                    <td class="text-right">£300.00</td>
+                </tr>
+                <tr>
+                    <td>VAT / Tax Amount Evaluation (20%)</td>
+                    <td class="text-right">£60.00</td>
+                </tr>
+                <tr style="font-weight: bold; color: #1a365d; font-size: 12pt;">
+                    <td>Total Account Amount Due</td>
+                    <td class="text-right" style="border-top: 2px solid #2b6cb0;">£360.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    </html>
+    
