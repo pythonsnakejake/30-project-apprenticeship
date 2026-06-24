@@ -1,0 +1,19 @@
+### 📝 MILESTONE 1: PLANNING DOCUMENT (PROJ 2.6)
+
+1. PROBLEM DEFINITION: (What operational bottleneck and executive readability challenge are we eliminating for the corporate finance team?)
+For non-technical members of the finance team, running a Python file and understanding the data may be a real challenge. To navigate this problem,
+we will be creating a well structured, readable PDF file that is easier to understand. 
+
+2. RENDERING MECHANICS (HTML to PDF):
+   - We are using an HTML-to-PDF compilation engine called WeasyPrint. Why is using web layout properties like `display: flex` or `display: grid` 
+   completely banned when building documents for this rendering engine?
+   We are rendering our PDFs via paged-media layouts, who's standards differ from web standards and is a custom python-based pagination layout engine, 
+   not a web browser. PDF rendering engines operate on W3C Paged Media pagination rules, not dynamic web browser viewports.
+
+   - What CSS structural model should we use instead to layout side-by-side structures (like an invoice meta-data header) cleanly?
+   We should use the CSS Block Layout model combined with explicit width definitions or HTML Tables
+
+3. STRUCTURAL DATA EXTRACTION: (If we receive values like `4250.5` and `850.1`, why is displaying them directly on an invoice a critical formatting 
+error, and what operator pattern guarantees they display correctly as corporate line items?)
+We are dealing with currencies, and if they are not rounded to the correct figure, we could end up charging customers more, or less, which would cost 
+the company money. We could also incur penalties for not paying enough tax. To fix this issue, we use the :.2f pattern to round to 2 decimal places. 
