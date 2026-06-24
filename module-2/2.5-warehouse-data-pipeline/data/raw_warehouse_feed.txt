@@ -1,0 +1,5 @@
+Item_ID,Item_Name,Quantity_Raw,Weight_Raw
+ITEM-101,Anvil Heavy,45,12.50
+ITEM-102,Steel Cable,ERROR,4.20
+ITEM-103,Copper Pipe,12,CORRUPT_DATA
+ITEM-104,Iron Girders,110,85.15
